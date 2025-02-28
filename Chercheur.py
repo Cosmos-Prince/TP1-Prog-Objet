@@ -9,13 +9,20 @@ class Chercheur:
         return f"Chercheur: {self.nom}, {self.poste}, {self.__numeroOrdi}"
     # methode __str__ qui retourne les informations de la classe Chercheur
 
+    def __repr__(self):
+        return f"{self.__str__()} \n"
+    # mÃ©thode __repr__ pour afficher les informations de la classe chercheur dans les getters
+    # des autres classes utilisant ces informations puisque print(self.__listeChercheurs)
+    # utilise __repr__ et non __str__
+
+
     def getNumeroOrdi(self):
         return self.__numeroOrdi
-    # getter pour le numéro d'ordi
+    # getter pour le numï¿½ro d'ordi
 
     def setNumeroOrdi(self, nouveauNum:str):
         self.__numeroOrdi = nouveauNum
-    # setter pour le numéro d'ordi
+    # setter pour le numï¿½ro d'ordi
 
 
 class Professeur(Chercheur):
@@ -26,9 +33,9 @@ class Professeur(Chercheur):
 
     def getSpecialite(self):
         return self.__specialite
-    # getter pour la spécialité
+    # getter pour la spÃ©cialitÃ©
 
     def setSpecialite(self, valeur:str):
         self.__specialite = valeur
-    # setter pour la spécialité
+    # setter pour la spÃ©cialitÃ©
 

@@ -15,7 +15,8 @@ class Laboratoire():
             self.__bureau.append(bureau)
         else:
             print("Erreur, ce Laboratoire est deja plein.")
-    # méthode pour ajouter des bureaux dans le labo s'il reste de la place, en comparant la longeueur de la liste __bureau a la quantite maximale de bureaux possibles
+    # mÃ©thode pour ajouter des bureaux dans le labo s'il reste de la place, 
+    # en comparant la longeueur de la liste __bureau a la quantite maximale de bureaux possibles
 
     def getBureaux(self):
         return self.__bureau
@@ -27,3 +28,4 @@ class Laboratoire():
         for b in self.__bureau:
             b.afficherBureau()
     # methode pour afficher toutes les informations du laboratoire
+    
