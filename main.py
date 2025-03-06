@@ -1,5 +1,4 @@
 # Alek Hanachian 6226989    
-from stringprep import c22_specials
 from Chercheur import * 
 from Adresse import *
 from Bureau import *
@@ -95,9 +94,25 @@ for i in range(2, 52):
 #print(listeBureaux)
 for b in listeBureaux:
     l1.ajouterBureau(b)
-    print(l1.getBureaux(), "\n")
-# ajoute un bureau à la fois et affiche la nouvelle liste de bureaux étant reliés au Labo 1
+    if len(l1.getBureaux()) == 50:
+        print(l1.getBureaux(), "\n")
+# ajoute un bureau à la fois et affiche la nouvelle liste de bureaux lorsque pleine, étant reliés au Labo 1
 # démontre aussi la fonctionnalité de getBureaux
+
+b2 = Bureau("B002", "Bureau 2")
+b3 = Bureau("B003", "Bureau 3")
+b4 = Bureau("B004", "Bureau 4")
+b5 = Bureau("B005", "Bureau 5")
+b6 = Bureau("B006", "Bureau 6")
+
+b2.ajouterChercheurs(c1)
+b3.ajouterChercheurs(c1)
+b4.ajouterChercheurs(c1)
+b5.ajouterChercheurs(c1)
+print(f"Le chercheur {c1} est dans les bureaux : \n{c1.getListeBureau()}")
+b6.ajouterChercheurs(c1)
+print(f"Le chercheur {c1} est dans les bureaux : \n{c1.getListeBureau()}")
+# ajoute le chercheur c1 à 5 bureaux, puis 1 de plus pour démontrer le cas d'erreur
 
 # afficherLaboratoire à déjà été démontré au début du fichier
 

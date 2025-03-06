@@ -3,7 +3,29 @@ class Chercheur:
         self.nom = nom
         self.poste = poste
         self.__numeroOrdi = numOrdi
+        self.__appartientABureau:list = []
+        self.__maxBureau:int = 5
     # constructeur de la classe Chercheur
+
+    def getNumeroOrdi(self):
+        return self.__numeroOrdi
+    # getter pour le num�ro d'ordi
+
+    def setNumeroOrdi(self, nouveauNum:str):
+        self.__numeroOrdi = nouveauNum
+    # setter pour le numéro d'ordi
+
+    def getListeBureau(self):
+        return self.__appartientABureau
+    # getter pour la liste de bureaux auquel le chercheur appartient
+
+    def addListeBureau(self, valeur):
+        self.__appartientABureau.append(valeur)
+    # ajoute une valeur de plus à la liste de bureaux auquel le chercheur appartient
+
+    def getMaxBureaux(self):
+        return self.__maxBureau
+    # getter pour le maximum de bureaux auquel un chercheur peut appartenir
 
     def __str__(self):
         return f"Chercheur: {self.nom}, {self.poste}, {self.__numeroOrdi}"
@@ -16,13 +38,7 @@ class Chercheur:
     # utilise __repr__ et non __str__
 
 
-    def getNumeroOrdi(self):
-        return self.__numeroOrdi
-    # getter pour le num�ro d'ordi
 
-    def setNumeroOrdi(self, nouveauNum:str):
-        self.__numeroOrdi = nouveauNum
-    # setter pour le num�ro d'ordi
 
 
 class Professeur(Chercheur):

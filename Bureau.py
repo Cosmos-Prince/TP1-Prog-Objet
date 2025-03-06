@@ -14,7 +14,13 @@ class Bureau():
 
     def ajouterChercheurs(self, nouveauChercheur:Chercheur):
         if len(self.__listeChercheurs) < self.maxChercheurs:
-            self.__listeChercheurs.append(nouveauChercheur)
+            if nouveauChercheur.getMaxBureaux() > len(nouveauChercheur.getListeBureau()):
+                nouveauChercheur.addListeBureau(self)
+                self.__listeChercheurs.append(nouveauChercheur)
+            # 2e check pour vérifier si le chercheur est déjà dans un maximum de bureaux possibles 
+            # (demandé par le professeur à l'oral le 6/03 après une question par rapport à la formulation de l'énoncé du TP)
+            else:
+                print(f"Erreur, le chercheur {nouveauChercheur} est déja dans {nouveauChercheur.getMaxBureaux()} bureaux et ne peux plus être ajouté dans d'autres.")
         else:
             print("Erreur, ce bureau contient deja le nombre maximum de chercheurs.")
     # fonction ajouterChercheurs vérifie si la liste __listeChercheurs est pleine, 
