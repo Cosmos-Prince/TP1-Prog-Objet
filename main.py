@@ -100,3 +100,4 @@ for b in listeBureaux:
 # démontre aussi la fonctionnalité de getBureaux
 
 # afficherLaboratoire à déjà été démontré au début du fichier
+
